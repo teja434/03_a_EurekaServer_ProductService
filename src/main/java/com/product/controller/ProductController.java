@@ -17,9 +17,9 @@ public class ProductController {
 	@Autowired
 	ProductService productService;
 
-	@GetMapping(path="/products/{pid}", produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(path = "/products/{pid}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<ProductEntity> getAllProductsByOrderId(@PathVariable("pid") Integer productId) {
-		return new ResponseEntity<ProductEntity>(productService.getProductDetails(productId),HttpStatus.OK);
+		return new ResponseEntity<ProductEntity>(productService.getProductDetails(productId), HttpStatus.OK);
 	}
 
 }
